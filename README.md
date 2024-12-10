@@ -25,15 +25,61 @@ The function above will find the average of the first `k` elements in an array o
 
 ## Test Cases:
 
-### Functional Test Cases::
+### Functional Test Cases:
+The function  is made to handle the following test cases for the array X[1.....n].
 
+|Test Case     | Array parameters| Value of k | Returned Value|
+|--------------|------------|------------|------------------|
+|1. Empty list | {}         | 2        |       0|
+|2. Functional case| {1,2,3,4,5,6}     |  3|   2|
+|3. k < 0      | {1,2,3,4}  |   -2     |       0|
+|4. k > length of array | {1,2,3,4,5}  | 7 |   3|
 
 
 
 ### Partitional Test Cases:
 
+Partitions of k:
+- k < 0 : no subset of the array is calculated
+- 0 <= k <= legnth of array : some subset of the array as calculated
+- k > length of array : the entier array is calculated
 
+Partitions of the array:
+- list.length == 0 : empty array
+- list.legnth > 0 : non-empty array
+
+|Test Case     | Array parameters| Value of k | Returned Value|
+|--------------|-----------------|------------|---------------|
+|1. Empty list | {}         | 2        |       0|
+|2. 0< k< list.length | {1,2,3,4,5,6}  |  3|   2|
+|3. k < 0      | {1,2,3,4}  |   -2     |       0|
+|4. k > length of array | {1,2,3,4,5}  | 7 |   3|
+|5. k == length of array| {1,2,3}      | 3 |   2|
 
 
 ### Boundary Test Cases:
     
+|Test Case     | Array parameters| Value of k | Returned Value|
+|--------------|------------|------------|------------------|
+|1. k=0 | {1,2,3,4}         | 0        |       0|
+|2. k = 1| {1,2,3,4,5,6}     |  1|   1|
+|3. k = -1      | {1,2,3,4}  |   -1     |       0|
+|4. k = length of array | {1,2,3,4,5}  | 5 |   3|
+|5. k = length of array-1 | {1,2,3,4,5}  | 4 |   2|
+|6. k = length of array+1 | {1,2,3,4,5}  | 6 |   3|
+|7. list.length = 0 |   {}   | k=1  | 0|
+|8. list.length = 1 |{2}     |k=1     |2|
+
+## Fixing the Errors Upon Test Completion:
+When I run my test cases, I recived 6 errors:
+
+-  functionalAverageTest()
+-  partitionValidAverageTest()
+-  partitionGreaterAverageTest()
+-  boundaryLengthAverageTest()
+-  boundaryLengthAverageTest()
+-  boundaryValidAverageTest()
+
+The tests above failed because the Average class' code has the for loop start at zero, but end one index before the specfied index given. 
+The code looks like, `for(int i=0 ; i< n-1 ; i++) ` , but instead, the code should look like, `for(int i = 0 ; i < n ; i++)` for completion.
+After fixing the error, all test cases pass.
