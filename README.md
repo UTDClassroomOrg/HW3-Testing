@@ -83,3 +83,7 @@ When I run my test cases, I recived 6 errors:
 The tests above failed because the Average class' code has the for loop start at zero, but end one index before the specfied index given. 
 The code looks like, `for(int i=0 ; i< n-1 ; i++) ` , but instead, the code should look like, `for(int i = 0 ; i < n ; i++)` for completion.
 After fixing the error, all test cases pass.
+
+## Test cases with coverage:
+![Screenshot 2024-12-09 200513](https://github.com/user-attachments/assets/bf59b389-ea21-41f2-9829-13fcf348d127)
+
