@@ -1,4 +1,5 @@
 # HW3-Testing
+**Note: Ignore any unnecessary files and only focus on Average.java and AverageTest.java , all other java files were made for practice.**
 ## The Average function
 The class will do the following:
 
